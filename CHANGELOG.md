@@ -6,6 +6,7 @@
 
 - switched to typescript
 - replaced ava with vitest
+- switched to pnpm for package management
 
 ### 1.3.2
 
