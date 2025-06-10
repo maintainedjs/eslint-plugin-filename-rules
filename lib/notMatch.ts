@@ -1,51 +1,53 @@
-const path = require('path');
-const { getRegex } = require('./common/getRegex');
-const { aliasesNames} = require('./common/aliases');
+import { Rule } from "eslint";
+import path from "node:path";
+import { aliasNames } from "./common/aliases";
+import { getRegex } from "./common/getRegex";
 
-const meta = {
-  type: 'layout',
-  name: 'not-match',
+const meta: Rule.RuleMetaData = {
+  type: "layout",
   docs: {
-    description: 'checks that filenames do not match a chosen pattern',
+    description: "checks that filenames do not match a chosen pattern",
   },
-  fixable: false,
+  fixable: undefined,
   messages: {
     match: "Filename '{{name}}' must not match {{value}}.",
   },
   schema: {
-    type: 'array',
+    type: "array",
     minItems: 1,
     maxItems: 2,
     oneOf: [
       {
-        items: [{ type: 'string', enum: aliasesNames }],
+        items: [{ type: "string", enum: aliasNames }],
       },
       {
-        items: [{ type: 'string', pattern: '/.*./' }],
+        items: [{ type: "string", pattern: "/.*./" }],
       },
       {
-        items: [{ type: 'object' }],
+        items: [{ type: "object" }],
       },
     ],
   },
 };
 
-module.exports = {
+export const notMatch: Rule.RuleModule = {
   meta,
   create: (context) => ({
     Program: (node) => {
-      const filename = context.getFilename();
+      const filename = context.filename;
       const includePath = !!(context.options[0] || {}).includePath;
       const name = includePath ? filename : path.basename(filename);
       const [regex, regexStr] = getRegex(context.options[0], name);
+
       if (!regex) return;
+
       if (regex.test(name)) {
         context.report({
           node,
-          messageId: 'match',
+          messageId: "match",
           data: {
             name,
-            value: regexStr,
+            value: regexStr ?? "",
           },
         });
       }
