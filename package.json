@@ -24,15 +24,18 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dolsem/eslint-plugin-filename-rules.git"
+    "url": "git+https://github.com/maintainedjs/eslint-plugin-filename-rules.git"
   },
   "keywords": [],
-  "author": "Denis Olsem <dols3m@gmail.com>",
+  "authors": [
+    "Denis Olsem <dols3m@gmail.com>",
+    "Fatih Kaya <1994274@gmail.com>"
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dolsem/eslint-plugin-filename-rules/issues"
+    "url": "https://github.com/maintainedjs/eslint-plugin-filename-rules/issues"
   },
-  "homepage": "https://github.com/dolsem/eslint-plugin-filename-rules#readme",
+  "homepage": "https://github.com/maintainedjs/eslint-plugin-filename-rules#readme",
   "devDependencies": {
     "@types/node": "^24.0.0",
     "babel-register": "^6.26.0",
