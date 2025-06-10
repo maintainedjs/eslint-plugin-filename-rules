@@ -8,22 +8,21 @@ Adds an ESLint rule to enforce filename conventions for linted files. Allows dif
 [![Coverage Status][coverage-image]][coverage-url]
 [![License: MIT][license-image]][license-url]
 
-
 ## Installation
 
 ```bash
-$ npm install -D eslint-plugin-filename-rules
+$ npm install -D @maintained/eslint-plugin-filename-rules
 ```
+
 ## Old style config
+
 Add it to your `.eslintrc.js`:
 
 ```js
 module.exports = {
-  plugins: [
-    'filename-rules',
-  ],
+  plugins: ["@maintained/filename-rules"],
   rules: {
-    'filename-rules/match': [2, 'camelcase'],
+    "@maintained/filename-rules/match": [2, "camelcase"],
   },
 };
 ```
@@ -31,11 +30,11 @@ module.exports = {
 ## Flat config
 
 ```js
-import fileName from 'eslint-plugin-filename-rules'
+import { plugin as filenameRules } from '@maintained/eslint-plugin-filename-rules';
 
 {
   plugins: {
-    'filename-rules': fileName,
+    'filename-rules': filenameRules,
   },
   rules: {
     'filename-rules/match': [2, 'camelcase']
