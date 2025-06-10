@@ -14,7 +14,7 @@ Adds an ESLint rule to enforce filename conventions for linted files. Allows dif
 ```bash
 $ npm install -D eslint-plugin-filename-rules
 ```
-
+## Old style config
 Add it to your `.eslintrc.js`:
 
 ```js
@@ -26,6 +26,21 @@ module.exports = {
     'filename-rules/match': [2, 'camelcase'],
   },
 };
+```
+
+## Flat config
+
+```js
+import fileName from 'eslint-plugin-filename-rules'
+
+{
+  plugins: {
+    'filename-rules': fileName,
+  },
+  rules: {
+    'filename-rules/match': [2, 'camelcase']
+  }
+}
 ```
 
 ## Plugin Options
