@@ -4,8 +4,6 @@ Adds an ESLint rule to enforce filename conventions for linted files. Allows dif
 
 [![NPM Version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][downloads-url]
-[![Build Status][travis-image]][travis-url]
-[![Coverage Status][coverage-image]][coverage-url]
 [![License: MIT][license-image]][license-url]
 
 ## Installation
@@ -80,13 +78,9 @@ The inverse rule `not-match` checks that the files do NOT match the given patter
 
 MIT
 
-[npm-image]: https://img.shields.io/npm/v/eslint-plugin-filename-rules.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/eslint-plugin-filename-rules
-[downloads-image]: https://img.shields.io/npm/dm/eslint-plugin-filename-rules.svg?style=flat-square
-[downloads-url]: https://npmjs.org/package/eslint-plugin-filename-rules
-[travis-image]: https://img.shields.io/travis/dolsem/eslint-plugin-filename-rules.svg?style=flat-square
-[travis-url]: https://travis-ci.org/dolsem/eslint-plugin-filename-rules
-[coverage-image]: https://img.shields.io/coveralls/dolsem/eslint-plugin-filename-rules.svg?style=flat-square
-[coverage-url]: https://coveralls.io/github/dolsem/eslint-plugin-filename-rules?branch=master
+[npm-image]: https://img.shields.io/npm/v/%40maintained/eslint-plugin-filename-rules.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/%40maintained/eslint-plugin-filename-rules
+[downloads-image]: https://img.shields.io/npm/dm/%40maintained%2Feslint-plugin-filename-rules
+[downloads-url]: https://npmjs.org/package/@maintained/eslint-plugin-filename-rules
 [license-image]: https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square
 [license-url]: https://opensource.org/licenses/MIT
