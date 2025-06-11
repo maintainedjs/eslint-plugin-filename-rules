@@ -1,8 +1,8 @@
 const patterns = {
   pascalcase: /^[A-Z]([A-Z0-9]*[a-z]+)+[A-Z0-9]*(?:\..*)?$/,
   camelcase: /^[a-z]+((\d)|([A-Z0-9][a-z0-9]+))*([A-Z])?(?:\..*)?$/,
-  snakecase: /^([a-z]+_)*[a-z]+(?:\..*)?$/,
-  kebabcase: /^([a-z]+-)*[a-z]+(?:\..*)?$/,
+  snakecase: /^([a-z0-9]+_)*[a-z0-9]+(?:\..*)?$/,
+  kebabcase: /^([a-z0-9]+-)*[a-z0-9]+(?:\..*)?$/,
 } as const;
 
 export const aliases = {

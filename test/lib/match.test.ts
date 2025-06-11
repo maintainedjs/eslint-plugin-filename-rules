@@ -1,5 +1,5 @@
 import { RuleTester } from "eslint";
-import { expect, test } from "vitest";
+import { describe, expect, test } from "vitest";
 import { match } from "../../lib/match";
 
 const tester = new RuleTester();
@@ -103,7 +103,7 @@ test("throws on unknown alias", () => {
   );
 });
 
-["camelcase", "camelCase"].forEach((alias) => {
+describe.each(["camelcase", "camelCase"] as const)("test alias %s", (alias) => {
   test(
     `single alias - ${alias}`,
     testRule({
@@ -121,6 +121,16 @@ test("throws on unknown alias", () => {
         {
           code,
           filename: "/foo/bar/module.test.js",
+          options: [alias],
+        },
+        {
+          code,
+          filename: "/foo/bar/module.test01.js",
+          options: [alias],
+        },
+        {
+          code,
+          filename: "/foo/bar/someComponent01.js",
           options: [alias],
         },
       ],
@@ -201,6 +211,11 @@ test("throws on unknown alias", () => {
         {
           code,
           filename: "/foo/bar/ModuleNameWithACRONYM.js",
+          options: [alias],
+        },
+        {
+          code,
+          filename: "/foo/bar/Component01.js",
           options: [alias],
         },
       ],
@@ -290,6 +305,22 @@ test("throws on unknown alias", () => {
           filename: "/foo/bar/another_module.test.js",
           options: [alias],
         },
+        {
+          code,
+          filename: "/foo/bar/component_01.js",
+          options: [alias],
+        },
+
+        {
+          code,
+          filename: "/foo/bar/component.01.js",
+          options: [alias],
+        },
+        {
+          code,
+          filename: "/foo/bar/01_component.js",
+          options: [alias],
+        },
       ],
       invalid: [
         {
@@ -375,6 +406,16 @@ test("throws on unknown alias", () => {
         {
           code,
           filename: "/foo/bar/another-module.test.js",
+          options: [alias],
+        },
+        {
+          code,
+          filename: "/foo/bar/icon-01.js",
+          options: [alias],
+        },
+        {
+          code,
+          filename: "/foo/bar/01-component.js",
           options: [alias],
         },
       ],
