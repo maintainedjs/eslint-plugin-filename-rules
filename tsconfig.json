@@ -3,8 +3,10 @@
     "alwaysStrict": true,
     "declaration": true,
     "esModuleInterop": true,
-    "outDir": "dist",
-    "strict": true
+    "outDir": "./dist",
+    "rootDir": "./lib",
+    "strict": true,
+    "types": ["node"],
   },
   "include": ["lib"]
 }

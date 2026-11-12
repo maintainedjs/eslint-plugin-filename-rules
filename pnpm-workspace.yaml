@@ -1,4 +1,2 @@
-onlyBuiltDependencies:
-  - core-js
-  - esbuild
-  - fsevents
+allowBuilds:
+  core-js: true
