@@ -1,3 +1,7 @@
+### v1.5.1
+
+- chore: upgrade deps
+
 ### v1.5.0
 
 - snake case: allow numbers in filenames
